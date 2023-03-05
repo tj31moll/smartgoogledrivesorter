@@ -8,8 +8,11 @@ WORKDIR /app2
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+EXPOSE 3636
 # Copy the Python script and credentials file
-COPY my_script.py credentials.json ./
+COPY main.py credentials.json ./
+
+
 
 # Set the entry point
 ENTRYPOINT ["python", "main.py"]
